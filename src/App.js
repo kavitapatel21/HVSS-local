@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import './Routes/Routes.js';
 import routesData from './Routes/Routes.js';
@@ -12,8 +12,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <Routes>
+        <Routes>
             {
               routesData.map((element, index) => {
                 return (
@@ -21,20 +20,7 @@ function App() {
                 )
               })
             }
-          </Routes>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          </Routes> 
       </div>
     </Router>
   );
