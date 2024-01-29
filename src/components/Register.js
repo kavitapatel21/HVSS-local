@@ -1,5 +1,7 @@
 import { Formik, Form, Field } from 'formik';
 import {Row, Col} from 'react-bootstrap';
+import PasswordShow from "../assets/images/password-show.svg";
+import PasswordHide from "../assets/images/password-hide.svg";
 
 const Register = () => {
     return (
@@ -46,7 +48,7 @@ const Register = () => {
                   <Row>
                     <Col md={6}>
                       <div className='form-group mb-4'>
-                        <label for="firstname" className='label-title mb-2 d-block w-100 text-left'>First name</label>
+                        <label htmlFor="firstname" className='label-title mb-2 d-block w-100 text-left'>First name</label>
                         <Field 
                           type="text"
                           name="firstname"
@@ -60,7 +62,7 @@ const Register = () => {
                     </Col>
                     <Col md={6}>
                       <div className='form-group mb-4'>
-                        <label for="lastname" className='label-title mb-2 d-block w-100 text-left'>Last name</label>
+                        <label htmlFor="lastname" className='label-title mb-2 d-block w-100 text-left'>Last name</label>
                         <Field 
                           type="text"
                           name="lastname"
@@ -74,7 +76,7 @@ const Register = () => {
                     </Col>
                     <Col md={12}>
                       <div className='form-group mb-4'>
-                        <label for="email" className='label-title mb-2 d-block w-100 text-left'>Email</label>
+                        <label htmlFor="email" className='label-title mb-2 d-block w-100 text-left'>Email</label>
                         <Field 
                           type="email"
                           name="email"
@@ -88,15 +90,19 @@ const Register = () => {
                     </Col>
                     <Col md={12}>
                       <div className='form-group mb-4'>
-                        <label for="email" className='label-title mb-2 d-block w-100 text-left'>Password</label>
-                        <Field 
-                          type="password"
-                          name="password"
-                          placeholder="Password"
-                          // onChange={handleChange}
-                          // onBlur={handleBlur}
-                          // value={values.password}
-                        />
+                        <label htmlFor="email" className='label-title mb-2 d-block w-100 text-left'>Password</label>
+                        <div className='position-relative'>
+                          <Field 
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            // onChange={handleChange}
+                            // onBlur={handleBlur}
+                            // value={values.password}
+                          />
+                          <img src={PasswordShow} className='ico_float right' alt='Password' />
+                        {/* <img src={PasswordHide} className='ico_float right' alt='Password' /> */}
+                        </div>
                         {/* {errors.password && touched.password && errors.password} */}
                       </div> 
                     </Col>

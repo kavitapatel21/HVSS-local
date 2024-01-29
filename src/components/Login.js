@@ -1,4 +1,6 @@
 import { Formik, Form, Field } from 'formik';
+import PasswordShow from "../assets/images/password-show.svg";
+import PasswordHide from "../assets/images/password-hide.svg";
 
 const Login = () => {
     return (
@@ -43,7 +45,7 @@ const Login = () => {
                 // onSubmit={handleSubmit}
                 >
                   <div className='form-group mb-4'>
-                    <label for="email" className='label-title mb-2 d-block w-100 text-left'>Email</label>
+                    <label htmlFor="email" className='label-title mb-2 d-block w-100 text-left'>Email</label>
                     <Field 
                       type="email"
                       name="email"
@@ -55,15 +57,19 @@ const Login = () => {
                     {/* {errors.email && touched.email && errors.email} */}
                   </div>
                   <div className='form-group mb-4'>
-                    <label for="email" className='label-title mb-2 d-block w-100 text-left'>Password</label>
-                    <Field 
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                      // onChange={handleChange}
-                      // onBlur={handleBlur}
-                      // value={values.password}
-                    />
+                    <label htmlFor="email" className='label-title mb-2 d-block w-100 text-left'>Password</label>
+                    <div className='position-relative'>
+                      <Field 
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        // onChange={handleChange}
+                        // onBlur={handleBlur}
+                        // value={values.password}
+                      />
+                      <img src={PasswordShow} className='ico_float right' alt='Password' />
+                      {/* <img src={PasswordHide} className='ico_float right' alt='Password' /> */}
+                    </div>
                     {/* {errors.password && touched.password && errors.password} */}
                   </div>
                   <div className='text-end mb-4'>
