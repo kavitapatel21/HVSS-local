@@ -21,11 +21,11 @@ const routesData = [
     element: <HomeSearch />,
     title: "home"
   },
-  {
-    path: "/search",
-    element: <Search />,
-    title: "search"
-  },
+  // {
+  //   path: "/search",
+  //   element: <Search />,
+  //   title: "search"
+  // },
   {
     path: "/import",
     element: <Import />,
