@@ -1,5 +1,6 @@
 import { Formik, Form, Field } from 'formik';
 import { Link } from 'react-router-dom';
+import PasswordShow from '../assets/images/password-show.svg';
 
 const Login = () => {
     return (
@@ -59,14 +60,18 @@ const Login = () => {
                 </div>
                 <div className='form-group mb-4'>
                   <label htmlFor="password" className='label-title mb-2 d-block w-100 text-left'>Password</label>
-                  <Field 
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.password}
-                  />
+                  <div className='position-relative'>
+                    <img src={PasswordShow} className='ico_float right c-pointer' alt='Password' />
+                    <Field 
+                      type="password"
+                      name="password"
+                      className="pe-5"
+                      placeholder="Password"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.password}
+                    />
+                  </div>
                   {errors.password && touched.password && <div className="error-message">{errors.password}</div>}
                 </div>
                 <div className='text-end mb-4'>
@@ -84,7 +89,7 @@ const Login = () => {
                   </button>
                 </div>
                 <div className='text-center'>
-                  <span className='regular-title c-pointer'>New user? <Link to="/register">Create account</Link></span>
+                  <span className='regular-title c-pointer'>New user? <Link to="/register" className='highlight'>Create account</Link></span>
                 </div>
               </Form>
             )}
