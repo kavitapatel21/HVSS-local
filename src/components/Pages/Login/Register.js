@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage  } from 'formik';
 import {Row, Col} from 'react-bootstrap';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import PasswordShow from '../assets/images/password-show.svg';
 
 
 const validationSchema = Yup.object({
@@ -66,11 +67,14 @@ const Register = () => {
                 <Col md={12}>
                   <div className='form-group mb-4'>
                     <label htmlFor="password" className='label-title mb-2 d-block w-100 text-left'>Password</label>
-                    <Field 
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                    />
+                    <div className='position-relative'>
+                      <img src={PasswordShow} className='ico_float right c-pointer' alt='Password' />
+                      <Field 
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                      />
+                    </div>
                     <ErrorMessage name="password" component="div" className="error-message" />
                   </div> 
                 </Col>
@@ -81,7 +85,7 @@ const Register = () => {
                 </button>
               </div>
               <div className='text-center'>
-                <span className='regular-title c-pointer'>Already a user?<Link to="/login">Login</Link></span>
+                <span className='regular-title c-pointer'>Already a user? <Link to="/login" className='highlight'>Login</Link></span>
               </div>
             </Form>
           </Formik>
