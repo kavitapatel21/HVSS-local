@@ -1,7 +1,8 @@
-import "../assets/scss/header.scss" 
+import "../../assets/scss/header.scss" 
+
 import { Dropdown } from "react-bootstrap";
 
-const Sidebar = () => {
+const Header = () => {
     return (
       <div className="hvss-header text-end">    
         <Dropdown>
@@ -15,4 +16,4 @@ const Sidebar = () => {
       </div>
     );
   };
-export default Sidebar;
+export default Header;

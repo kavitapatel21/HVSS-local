@@ -1,7 +1,7 @@
-import "../assets/scss/sidebar.scss"
+import "../../assets/scss/sidebar.scss"
 import { Link } from "react-router-dom";
-import Search from "../assets/images/search.svg";
-import Export from "../assets/images/Export.svg"
+import Search from "../../assets/images/search.svg";
+import Export from "../../assets/images/Export.svg"
 
 const Sidebar = () => {
     return (

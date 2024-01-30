@@ -1,7 +1,6 @@
-import Login from "../components/Login";
-import Register from "../components/Register";
-import Home from "../components/Home";
-import Search from "../components/Pages/Search/index"
+import Login from "../components/Pages/Login/Login";
+import Register from "../components/Pages/Login/Register";
+import HomeSearch from "../components/Pages/HomeSearch"
 
 const routesData = [
   {
@@ -16,13 +15,8 @@ const routesData = [
   },
   {
     path: "/",
-    element: <Home />,
+    element: <HomeSearch />,
     title: "home"
   },
-  {
-    path: "/search",
-    element: <Search />,
-    title: "search"
-  }
 ];
 export default routesData;
