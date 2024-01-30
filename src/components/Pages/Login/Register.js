@@ -11,7 +11,7 @@ const validationSchema = Yup.object({
   firstname: Yup.string().required('First name is required'),
   lastname: Yup.string().required('Last name is required'),
   email: Yup.string().email('Invalid email address').required('Email is required'),
-  password: Yup.string().required('Password is required'),
+  password: Yup.string().min(8, 'Password must be at least 8 characters').required('Password is required'),
 });
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
