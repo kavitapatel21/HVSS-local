@@ -10,7 +10,7 @@ const Sidebar = () => {
             <h4 className="primary-title px-2">HVSS</h4>
         </Link>
         <div className="hvss-menu">
-            <Link to="/search" className="logo text-white d-flex align-items-center jusfify-content-start active">
+            <Link to="/" className="logo text-white d-flex align-items-center jusfify-content-start active">
                 <img src={Search} className="me-4" alt="Sidebar" />
                 <span>Search</span>
             </Link>
