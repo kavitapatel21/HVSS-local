@@ -1,6 +1,7 @@
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Home from "../components/Home";
+import Search from "../components/Pages/Search/index"
 
 const routesData = [
   {
@@ -17,6 +18,11 @@ const routesData = [
     path: "/",
     element: <Home />,
     title: "home"
+  },
+  {
+    path: "/search",
+    element: <Search />,
+    title: "search"
   }
 ];
 export default routesData;
