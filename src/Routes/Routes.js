@@ -1,9 +1,7 @@
-// import Login from "../components/Login";
-// import Register from "../components/Register"; 
-import Import from "../components/Pages/Import/index"; 
+import Import from "../components/Pages/Import/ImportFile"; 
 import Login from "../components/Pages/Login/Login";
 import Register from "../components/Pages/Login/Register";
-import HomeSearch from "../components/Pages/HomeSearch" 
+import HomeSearch from "../components/Pages/Search/HomeSearch" 
 
 const routesData = [
   {

@@ -1,7 +1,7 @@
-import Header from "../../components/Layout/Header"
-import Sidebar from "../../components/Layout/Sidebar"
-import "../../assets/scss/search.scss";
-import IcoSearch from "../../assets/images/search_ico.svg"
+import Header from "../../../components/Layout/Header"
+import Sidebar from "../../../components/Layout/Sidebar"
+import "../../../assets/scss/search.scss";
+import IcoSearch from "../../../assets/images/search_ico.svg"
 // import IcoMore from "../../../assets/images/more.svg"
 
 const HomeSearch = () => {
