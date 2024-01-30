@@ -2,16 +2,19 @@ import { Formik, Form, Field, ErrorMessage  } from 'formik';
 import {Row, Col} from 'react-bootstrap';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
-import PasswordShow from '../assets/images/password-show.svg';
+import PasswordShow from '../../../assets/images/password-show.svg';
+import PasswordHide from '../../../assets/images/password-hide.svg';
+import { useState } from 'react';
 
 
 const validationSchema = Yup.object({
   firstname: Yup.string().required('First name is required'),
   lastname: Yup.string().required('Last name is required'),
   email: Yup.string().email('Invalid email address').required('Email is required'),
-  password: Yup.string().required('Password is required'),
+  password: Yup.string().min(8, 'Password must be at least 8 characters').required('Password is required'),
 });
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
     return (
       <div className="login-wrapper d-flex align-items-center justify-content-center">
       <div className="container">
@@ -68,9 +71,14 @@ const Register = () => {
                   <div className='form-group mb-4'>
                     <label htmlFor="password" className='label-title mb-2 d-block w-100 text-left'>Password</label>
                     <div className='position-relative'>
-                      <img src={PasswordShow} className='ico_float right c-pointer' alt='Password' />
-                      <Field 
-                        type="password"
+                    <img
+                        src={showPassword ? PasswordHide : PasswordShow}
+                        className='ico_float right c-pointer'
+                        alt='Password'
+                        onClick={() => setShowPassword(!showPassword)}
+                      />
+                      <Field
+                        type={showPassword ? 'text' : 'password'}
                         name="password"
                         placeholder="Password"
                       />

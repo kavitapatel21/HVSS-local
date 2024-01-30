@@ -1,10 +1,10 @@
-import Sidebar from "../../Sidebar";
-import Header from "../../header";
-import "../../../assets/scss/search.scss";
-import IcoSearch from "../../../assets/images/search_ico.svg"
+import Header from "../../components/Layout/Header"
+import Sidebar from "../../components/Layout/Sidebar"
+import "../../assets/scss/search.scss";
+import IcoSearch from "../../assets/images/search_ico.svg"
 // import IcoMore from "../../../assets/images/more.svg"
 
-const Search = () => {
+const HomeSearch = () => {
     return (
       <div className="d-flex">  
         <Sidebar />
@@ -88,4 +88,4 @@ const Search = () => {
       </div>
     );
   };
-export default Search;
+export default HomeSearch;
