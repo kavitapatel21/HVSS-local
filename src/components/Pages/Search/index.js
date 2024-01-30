@@ -2,7 +2,7 @@ import Sidebar from "../../Sidebar";
 import Header from "../../header";
 import "../../../assets/scss/search.scss";
 import IcoSearch from "../../../assets/images/search_ico.svg"
-import IcoMore from "../../../assets/images/more.svg"
+// import IcoMore from "../../../assets/images/more.svg"
 
 const Search = () => {
     return (
