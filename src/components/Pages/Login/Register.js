@@ -6,7 +6,6 @@ import PasswordShow from '../../../assets/images/password-show.svg';
 import PasswordHide from '../../../assets/images/password-hide.svg';
 import { useState } from 'react';
 
-
 const validationSchema = Yup.object({
   firstname: Yup.string().required('First name is required'),
   lastname: Yup.string().required('Last name is required'),

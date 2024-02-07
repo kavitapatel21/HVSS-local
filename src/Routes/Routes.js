@@ -3,21 +3,27 @@ import Login from "../components/Pages/Login/Login";
 import Register from "../components/Pages/Login/Register";
 import HomeSearch from "../components/Pages/Search/HomeSearch" 
 
+
 const routesData = [
   {
-    path: "login",
+    path: "/login",
     element: <Login />,
-    title: "login"
+    title: "login",
+    isPrivate: false
   },
   {
-    path: "register",
+    path: "/register",
     element: <Register />,
-    title: "register"
+    title: "register",
+    component: 'Register',
+    isPrivate: false
   },
   {
     path: "/",
     element: <HomeSearch />,
-    title: "home"
+    title: "home",
+    component: 'HomeSearch',
+    isPrivate: true
   },
   // {
   //   path: "/search",
@@ -27,7 +33,9 @@ const routesData = [
   {
     path: "/import",
     element: <Import />,
-    title: "import"
+    title: "import",
+    component: 'Import',
+    isPrivate: true
   }
 ];
 export default routesData;

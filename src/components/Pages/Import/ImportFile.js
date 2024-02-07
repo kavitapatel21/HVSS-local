@@ -1,26 +1,50 @@
 import Sidebar from "../../Layout/Sidebar";
 import Header from "../../Layout/Header";
-// import Loader from "../../Loader";
+import Loader from "../../Loader";
 import "../../../assets/scss/import.scss";
 import Upload from "../../../assets/images/Upload.svg"
 import { useState } from "react";
+import Subcodes from "../Services/Subcodes";
 // import IcoMore from "../../../assets/images/more.svg"
 
 const ImportFile = () => {
+    const [loading, setLoading] = useState(false);
     const [selectedFileName, setSelectedFileName] = useState('');
+    const {uploadFile} = Subcodes();
 
-    const handleFileChange = (event) => {
-        const fileInput = event.target;
-        if (fileInput.files.length > 0) {
+    const handleFileUpload = async (event) => {
+        try {
+          const fileInput = event.target;
+          if (fileInput.files.length > 0) {
             setSelectedFileName(fileInput.files[0].name);
         } else {
             setSelectedFileName('');
         }
-    };
+          const file = fileInput.files[0];
+      
+          if (!file) {
+            console.error('No file selected');
+            return;
+          }
+      
+          setLoading(true);
+      
+          // Now, you have the file, you can do additional checks or display its name
+          console.log('Selected File:', file.name);
+      
+          const response = await uploadFile(file);
+          console.log('File uploaded successfully:', response);
+          // Perform any other actions with the API response if needed
+        } catch (error) {
+          console.error('File upload failed:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
 
     return (
         <div className="d-flex">
-            {/* <Loader /> */}
+            {loading && <Loader />}
             <Sidebar />
             <div className="page-wrapper search">
                 <Header />
@@ -39,7 +63,8 @@ const ImportFile = () => {
                                     )}
                                     <p className="regular-title">
                                         Drop file here or <span className="highlight position-relative c-pointer">
-                                            <input type="file" name="file-upload" id="file_upload" accept=".pdf" onChange={handleFileChange} />browse</span>
+                                            <input type="file" name="file-upload" id="file_upload" accept=".pdf" onChange={handleFileUpload} />
+                                            browse</span>
                                     </p>
                                 </div>
                             </div>

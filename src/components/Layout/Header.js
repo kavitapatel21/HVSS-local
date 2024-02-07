@@ -1,8 +1,14 @@
 import "../../assets/scss/header.scss" 
+import AuthUser from "../Pages/Services/AuthUser"
 
 import { Dropdown } from "react-bootstrap";
 
 const Header = () => {
+  const { logout } = AuthUser();
+  const handleLogout = () => {
+    // Call the logout function when the "Logout" option is clicked
+    logout();
+  };
     return (
       <div className="hvss-header text-end">    
         <Dropdown>
@@ -10,7 +16,8 @@ const Header = () => {
                 John Doe
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Logout</Dropdown.Item> 
+                {/* <Dropdown.Item href="#/action-1" onClick={handleLogout}>Logout</Dropdown.Item>  */}
+                <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
       </div>
