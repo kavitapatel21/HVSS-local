@@ -3,26 +3,26 @@ import Sidebar from "../../../components/Layout/Sidebar"
 import "../../../assets/scss/search.scss";
 import IcoSearch from "../../../assets/images/search_ico.svg"
 import { useState } from "react";
-import Subcodes from '../Services/Subcodes';
+// import Subcodes from '../Services/Subcodes';
 
 // import IcoMore from "../../../assets/images/more.svg"
 
 const HomeSearch = () => {
     const [searchInput, setSearchInput] = useState('');
-    const subcodesService = Subcodes();
-    const handleSearch = async () => {
-        try {
-          const data = await subcodesService.getSubCode(searchInput);
+    // const subcodesService = Subcodes();
+    // const handleSearch = async () => {
+    //     try {
+    //       const data = await subcodesService.getSubCode(searchInput);
     
-          // Handle the data from the API response
-          console.log('API response:', data);
+    //       // Handle the data from the API response
+    //       console.log('API response:', data);
     
-          // Update the state or perform other actions with the data
-        } catch (error) {
-          // Handle errors
-          console.error('Error:', error.message);
-        }
-      };
+    //       // Update the state or perform other actions with the data
+    //     } catch (error) {
+    //       // Handle errors
+    //       console.error('Error:', error.message);
+    //     }
+    //   };
 
     return (
       <div className="d-flex">  
@@ -37,7 +37,7 @@ const HomeSearch = () => {
                             <div className="position-relative">
                                 <img src={IcoSearch} className="ico_float left" alt="Search Here" />
                                 <input type="text" placeholder="Search" id="search" name="search" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
-                                <button onClick={handleSearch}><img src={IcoSearch} className="" alt="Search Here" /></button>
+                                {/* <button onClick={handleSearch}><img src={IcoSearch} className="" alt="Search Here" /></button> */}
                             </div>
                         </div>
                         <table className="mt-4">

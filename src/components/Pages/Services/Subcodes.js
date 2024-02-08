@@ -38,11 +38,11 @@ const Subcodes = () => {
     }
   };
 
-  const getAllSubCodes = async (searchTerm) => {
-    // Include the search term
-    const queryParams = searchTerm ? `?search=${searchTerm}` : '';
-    return httpCode(`product_subcodes${queryParams}`, 'GET');
-  };
+const getAllSubCodes = async (searchTerm = '', page = 1) => {
+  // Include the search term and page information
+  const queryParams = searchTerm ? `?search=${searchTerm}&page_size=10&p=${page}` : `?p=${page}&page_size=10`;
+  return httpCode(`product_subcodes${queryParams}`, 'GET');
+};
 
   const getSubCode = (id) => {
     return httpCode(`product_subcodes/${id}`, 'GET');

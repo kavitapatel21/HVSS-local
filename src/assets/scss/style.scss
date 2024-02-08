@@ -117,13 +117,13 @@ button{
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 50%;
+    top: 35%;
     transform: translateY(-50%);
     &.right{    
         right: 15px;
     }
     &.left{
-        left: 15px;
+        left: 10px;
     }
 }
 
@@ -142,6 +142,8 @@ button{
     border-radius: 8px;
     .table-search{
         padding: 16px;
+        display: flex;
+        justify-content: space-between;
         .ico_float{
             width: 16px;
             height: 16px;
@@ -235,3 +237,20 @@ button{
     font-size: 11px;
     margin-top: 4px;
 }
+
+//subcode css [Start]
+.save-data{
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    padding: 13px 20px;
+    color: var(--white);
+    min-width: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+//subcode css [End]
